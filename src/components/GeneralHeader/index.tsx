@@ -1,11 +1,11 @@
 import { MapPin, ShoppingCartSimple } from "phosphor-react";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { GeneralHeaderContainer } from "./styles";
 import logo from "/src/assets/logo.svg";
 
-export function GeneralHeader() {
+export const GeneralHeader = memo(() => {
   const { cartProductAmounts } = useContext(CartContext);
 
   return (
@@ -41,4 +41,4 @@ export function GeneralHeader() {
       </div>
     </GeneralHeaderContainer>
   );
-}
+});

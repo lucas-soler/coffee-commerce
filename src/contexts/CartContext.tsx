@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useEffect, useReducer } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import {
   addProductAmountAction,
   changeProductAmountAction,
@@ -6,6 +12,7 @@ import {
 
 import { cartProductAmountReducer } from "../reducers/cart-product-amount/reducer";
 import { ProductAmount } from "../reducers/product-amounts/reducer";
+import { ProductsContext } from "./ProductsContext";
 
 interface CartContextType {
   cartProductAmounts: ProductAmount[];
@@ -20,6 +27,8 @@ interface CartContextProviderProps {
 }
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
+  const { changeAmount } = useContext(ProductsContext);
+
   const [cartProductAmounts, dispatch] = useReducer(
     cartProductAmountReducer,
     [],
@@ -38,10 +47,24 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
   function addCartProductAmount(productAmount: ProductAmount) {
     dispatch(addProductAmountAction(productAmount));
+
+    const resetAmount: ProductAmount = {
+      productID: productAmount.productID,
+      amount: 0,
+    };
+
+    changeAmount(resetAmount);
   }
 
   function changeCartProductAmount(newAmount: ProductAmount) {
     dispatch(changeProductAmountAction(newAmount));
+
+    const resetAmount: ProductAmount = {
+      productID: newAmount.productID,
+      amount: 0,
+    };
+
+    changeAmount(resetAmount);
   }
 
   useEffect(() => {
@@ -49,6 +72,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       "@coffee-commerce:cart-amounts-1.0.0",
       JSON.stringify(cartProductAmounts)
     );
+
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
   }, [cartProductAmounts]);
 
   return (

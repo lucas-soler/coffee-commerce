@@ -21,6 +21,7 @@ export function cartProductAmountReducer(
       return produce(state, (draft) => {
         draft.push(payload.cartProductAmount);
       });
+
     case CartProductAmountActionTypes.CHANGE_AMOUNT: {
       return produce(state, (draft) => {
         const productAmountIndex = state.findIndex(
