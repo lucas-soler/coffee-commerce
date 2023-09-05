@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import {
   ProductCounter,
@@ -22,7 +22,7 @@ interface ProductCardProps {
   productID: number;
 }
 
-export function ProductCard({ productID }: ProductCardProps) {
+export const ProductCard = memo(({ productID }: ProductCardProps) => {
   const { products } = useContext(ProductsContext);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -59,4 +59,4 @@ export function ProductCard({ productID }: ProductCardProps) {
       </li>
     </ProductCardContainer>
   );
-}
+});
