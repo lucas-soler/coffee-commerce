@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const ProductCounterContainer = styled.span`
   display: flex;
   gap: 0.5rem;
@@ -25,7 +27,6 @@ export const ProductCounterContainer = styled.span`
   }
 
   .amount > button {
-    -webkit-appearance: none;
     background-color: transparent;
     border: none;
     cursor: pointer;

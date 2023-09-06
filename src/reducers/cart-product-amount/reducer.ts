@@ -1,3 +1,4 @@
+import { CartProductAmount } from "../../contexts/CartContext";
 import {
   CartProductAmountActionTypes,
   CartProductAmountsActionType,
@@ -5,13 +6,8 @@ import {
 
 import { produce } from "immer";
 
-export interface ProductAmount {
-  productID: number;
-  amount: number;
-}
-
 export function cartProductAmountReducer(
-  state: ProductAmount[],
+  state: CartProductAmount[],
   action: CartProductAmountsActionType
 ) {
   const { type, payload } = action;

@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const ProductCardContainer = styled.span`
   li {
     background: ${(props) => props.theme["gray-200"]};

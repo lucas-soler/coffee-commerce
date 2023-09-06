@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const ProductLabelContainer = styled.span`
   background: #f1e9c9;
   font-size: 0.62rem;

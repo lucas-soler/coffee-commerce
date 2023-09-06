@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const GeneralHeaderContainer = styled.section`
   display: flex;
   flex: 1;

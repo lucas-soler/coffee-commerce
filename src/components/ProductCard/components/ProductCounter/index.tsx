@@ -14,6 +14,7 @@ export enum ProductCounterType {
 interface ProductCounterProps {
   productID: number;
   amount: number;
+  price: number;
   counterType: ProductCounterType;
 }
 
@@ -23,7 +24,7 @@ enum OperationType {
 }
 
 export const ProductCounter = memo(
-  ({ productID, amount, counterType }: ProductCounterProps) => {
+  ({ productID, amount, price, counterType }: ProductCounterProps) => {
     const changeAmount =
       counterType === ProductCounterType.GENERAL
         ? useContext(ProductsContext).changeAmount
@@ -45,7 +46,7 @@ export const ProductCounter = memo(
           ? amount - 1
           : 0;
 
-      changeAmount({ productID, amount: newAmount });
+      changeAmount({ productID, amount: newAmount, price });
     }
 
     function handleMinus() {
@@ -62,12 +63,16 @@ export const ProductCounter = memo(
       );
 
       !isThereTheSame
-        ? addCartProductAmount({ productID, amount: amount })
-        : changeCartProductAmount({ productID, amount: amount });
+        ? addCartProductAmount({
+            productID,
+            amount,
+            price,
+          })
+        : changeCartProductAmount({ productID, amount, price });
     }
 
     function handleDeleteCart() {
-      changeCartProductAmount({ productID, amount: 0 });
+      changeCartProductAmount({ productID, amount: 0, price });
     }
 
     return (

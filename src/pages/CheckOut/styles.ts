@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CheckOutContainer = styled.main`
   display: flex;
-  padding: 4.25rem 0;
+  padding: 2.5rem 0;
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
@@ -37,11 +37,55 @@ export const CheckOutContainer = styled.main`
     display: flex;
     flex-direction: column;
     border-radius: 6px 36px 6px 36px;
-    border: 1px solid red;
     gap: 1.5rem;
-  }
 
-  .products-list > hr {
-    border: 1px solid ${(props) => props.theme["gray-400"]};
+    > hr {
+      border: 1px solid ${(props) => props.theme["gray-400"]};
+    }
+
+    > section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-family: "Roboto", sans-serif;
+
+      > article {
+        display: flex;
+        justify-content: space-between;
+        > span {
+          line-height: 130%;
+          :nth-child(1) {
+            font-size: 0.875rem;
+          }
+
+          :nth-child(2) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      > footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+    }
+
+    > button {
+      color: ${(props) => props.theme.white};
+      text-transform: uppercase;
+      padding: 0.75rem 0.5rem;
+      background-color: ${(props) => props.theme["yellow-500"]};
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 160%;
+
+      :hover {
+        cursor: pointer;
+        background-color: ${(props) => props.theme["yellow-700"]};
+      }
+    }
   }
 `;

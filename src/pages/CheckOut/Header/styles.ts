@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const CheckOutHeaderContainer = styled.header`
   flex: 1;
   width: 100vw;

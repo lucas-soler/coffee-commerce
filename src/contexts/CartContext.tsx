@@ -14,10 +14,14 @@ import { cartProductAmountReducer } from "../reducers/cart-product-amount/reduce
 import { ProductAmount } from "../reducers/product-amounts/reducer";
 import { ProductsContext } from "./ProductsContext";
 
+export interface CartProductAmount extends ProductAmount {
+  price: number;
+}
+
 interface CartContextType {
-  cartProductAmounts: ProductAmount[];
-  addCartProductAmount: (productAmount: ProductAmount) => void;
-  changeCartProductAmount: (newProductAmount: ProductAmount) => void;
+  cartProductAmounts: CartProductAmount[];
+  addCartProductAmount: (cartProductAmount: CartProductAmount) => void;
+  changeCartProductAmount: (newCartProductAmount: CartProductAmount) => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -45,18 +49,18 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
   );
 
-  function addCartProductAmount(productAmount: ProductAmount) {
-    dispatch(addProductAmountAction(productAmount));
+  function addCartProductAmount(cartProductAmount: CartProductAmount) {
+    dispatch(addProductAmountAction(cartProductAmount));
 
     const resetAmount: ProductAmount = {
-      productID: productAmount.productID,
+      productID: cartProductAmount.productID,
       amount: 0,
     };
 
     changeAmount(resetAmount);
   }
 
-  function changeCartProductAmount(newAmount: ProductAmount) {
+  function changeCartProductAmount(newAmount: CartProductAmount) {
     dispatch(changeProductAmountAction(newAmount));
 
     const resetAmount: ProductAmount = {

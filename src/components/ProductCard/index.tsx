@@ -58,6 +58,7 @@ export const ProductCard = memo(({ productID }: ProductCardProps) => {
           <ProductCounter
             productID={product.id}
             amount={productAmount || 0}
+            price={product.price}
             counterType={ProductCounterType.GENERAL}
           ></ProductCounter>
         </footer>

@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const ProductDescriptionContainer = styled.span`
   display: flex;
   flex-direction: column;

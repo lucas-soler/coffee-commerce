@@ -1,7 +1,7 @@
-import { ProductAmount } from "./reducer";
+import { CartProductAmount } from "../../contexts/CartContext";
 
 interface CartProductAmountActionPayload {
-  cartProductAmount: ProductAmount;
+  cartProductAmount: CartProductAmount;
 }
 
 export enum CartProductAmountActionTypes {
@@ -14,7 +14,7 @@ export interface CartProductAmountsActionType {
   payload: CartProductAmountActionPayload;
 }
 
-export function addProductAmountAction(cartProductAmount: ProductAmount) {
+export function addProductAmountAction(cartProductAmount: CartProductAmount) {
   return {
     type: CartProductAmountActionTypes.ADD_AMOUNT,
     payload: {
@@ -23,7 +23,7 @@ export function addProductAmountAction(cartProductAmount: ProductAmount) {
   };
 }
 
-export function changeProductAmountAction(newAmount: ProductAmount) {
+export function changeProductAmountAction(newAmount: CartProductAmount) {
   return {
     type: CartProductAmountActionTypes.CHANGE_AMOUNT,
     payload: {

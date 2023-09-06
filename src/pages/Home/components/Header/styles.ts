@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const HeaderHomeContainer = styled.header`
   flex: 1;
   width: 100vw;
