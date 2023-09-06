@@ -74,6 +74,10 @@ export function CheckOut() {
 
             <button>Confirmar pedido</button>
           </section>
+          teste
+          <br />
+          <br />
+          <br />
         </div>
       </CheckOutContainer>
     </>

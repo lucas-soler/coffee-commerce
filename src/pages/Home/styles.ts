@@ -5,7 +5,6 @@ export const HomeContainer = styled.main`
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  width: 100vw;
   max-width: 70rem;
 
   h1 {
@@ -13,12 +12,6 @@ export const HomeContainer = styled.main`
     font-size: 2rem;
     font-weight: 800;
     color: ${(props) => props.theme["gray-800"]};
-  }
-
-  @media only screen and (max-width: 1025px) {
-    h1 {
-      padding: 0 2rem;
-    }
   }
 
   ul {

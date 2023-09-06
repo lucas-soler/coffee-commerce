@@ -2,12 +2,8 @@ import styled from "styled-components";
 
 export const HeaderHomeContainer = styled.header`
   flex: 1;
-  width: 100vw;
-  max-width: 90rem;
-  padding: 2rem 10rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   justify-content: space-between;
 
   .banner {
@@ -16,17 +12,17 @@ export const HeaderHomeContainer = styled.header`
     flex: 1;
     justify-content: space-between;
     flex-direction: row;
+    border: 1px solid red;
+    gap: 3.5rem;
   }
 
   @media only screen and (max-width: 1025px) {
-    padding: 2rem 2rem;
-
     .coffee-image {
       display: none;
     }
 
     .banner {
-      padding: 3rem 0 1rem 0;
+      padding: 1.5rem 0 1rem 0;
     }
   }
 

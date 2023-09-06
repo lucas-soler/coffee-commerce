@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const CheckOutContainer = styled.main`
   display: flex;
-  padding: 2.5rem 0;
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
-  width: 100vw;
-  max-width: 70rem;
   gap: 2rem;
+
+  border: 1px solid green;
 
   h1 {
     font-family: "Baloo 2", cursive;
@@ -20,6 +19,7 @@ export const CheckOutContainer = styled.main`
   .register-form {
     border: 1px solid red;
     width: 60vw;
+    align-self: start;
   }
 
   .check-out-cart {
