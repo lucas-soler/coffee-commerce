@@ -1,71 +1,68 @@
-import styles from "styled-components";
-
-export const GeneralHeaderContainer = styles.section`
-display: flex;
-flex: 1;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-
-.header-locale-and-cart {
+export const GeneralHeaderContainer = styled.section`
   display: flex;
-  gap: 0.5rem;
-}
-
-.header-locale{
-  display: flex;
+  flex: 1;
+  flex-direction: row;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background: #EBE5F9;
-  gap: 0.25rem;
-  height: 2.375rem;
-}
+  justify-content: space-between;
 
-.locale{
-  font-size: 0.875rem;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  color: #4B2995;
-}
+  .header-locale-and-cart {
+    display: flex;
+    gap: 0.5rem;
+  }
 
-.header-cart {
-  padding: 0.5rem;
-  background: #F1E9C9;
-  height: 2.375rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 6px;
-  cursor: pointer;
-}
+  .header-locale {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: #ebe5f9;
+    gap: 0.25rem;
+    height: 2.375rem;
+  }
 
-.header > img{
-  height: 2.5rem;
-}
+  .locale {
+    font-size: 0.875rem;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: #4b2995;
+  }
 
-.cart-total-amount {
-  margin-top: -1.125rem;
-  margin-right: -2.25rem;
-  flex-shrink: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.75rem;
-  display: flex;
-  color: white;
-  font-weight: bold;
-  align-items: center;
-  justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 16px;
-  background: ${(props) => props.theme["yellow-700"]};
-  letter-spacing: -0.72px;
-}
+  .header-cart {
+    padding: 0.5rem;
+    background: #f1e9c9;
+    height: 2.375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 
-.cart-icon{
-  margin-top: -0.125rem;
-}
+  .header > img {
+    height: 2.5rem;
+  }
 
+  .cart-total-amount {
+    margin-top: -1.125rem;
+    margin-right: -2.25rem;
+    flex-shrink: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 16px;
+    background: ${(props) => props.theme["yellow-700"]};
+    letter-spacing: -0.72px;
+  }
+
+  .cart-icon {
+    margin-top: -0.125rem;
+  }
 `;

@@ -11,19 +11,22 @@ export function CheckOut() {
     <>
       <CheckOutHeader />
       <CheckOutContainer>
-        <div className="registerForm">
+        <div className="register-form">
           <h1>Complete seu pedido</h1>
         </div>
-        <div className="checkOutCart">
+        <div className="check-out-cart">
           <h1>Cafés selecionados</h1>
-          <section className="productsList">
+          <section className="products-list">
             {cartProductAmounts.map((cartProduct) => {
               return (
-                <CartProduct
-                  key={`cart-product-${cartProduct.productID}`}
-                  productID={cartProduct.productID}
-                  amount={cartProduct.amount}
-                />
+                <>
+                  <CartProduct
+                    key={`cart-product-${cartProduct.productID}`}
+                    productID={cartProduct.productID}
+                    amount={cartProduct.amount}
+                  />
+                  <hr />
+                </>
               );
             })}
           </section>
