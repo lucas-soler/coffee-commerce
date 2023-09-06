@@ -1,19 +1,23 @@
 import { Coffee, Package, ShoppingCartSimple, Timer } from "phosphor-react";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
 import { GeneralHeader } from "../../../../components/GeneralHeader";
 import { HeaderHomeContainer } from "./styles";
 import coffeeHome from "/src/assets/coffee-home.svg";
 
 export function HomeHeader() {
+  const theme = useContext(ThemeContext);
+
   return (
     <HeaderHomeContainer>
       <GeneralHeader />
       <section className="banner">
         <div className="text">
           <section className="titles">
-            <article className="mainTitle">
+            <article className="main-title">
               Encontre o café perfeito para qualquer hora do dia
             </article>
-            <article className="mainText">
+            <article className="main-text">
               Com o Coffee Delivery você recebe seu café onde estiver, a
               qualquer hora
             </article>
@@ -22,50 +26,54 @@ export function HomeHeader() {
             <section>
               <span>
                 <span
-                  className="labelIconContainer"
-                  style={{ background: "#C47F17" }}
+                  className="label-icon-container"
+                  style={{ background: theme["yellow-700"] }}
                 >
-                  <ShoppingCartSimple size={16} weight="fill" color="white" />
+                  <ShoppingCartSimple
+                    size={16}
+                    weight="fill"
+                    color={theme.white}
+                  />
                 </span>
-                <span className="iconLabel">Compra simples e segura</span>
+                <span className="icon-label">Compra simples e segura</span>
               </span>
               <span>
                 <span
-                  className="labelIconContainer"
-                  style={{ background: "#DBAC2C" }}
+                  className="label-icon-container"
+                  style={{ background: theme["yellow-500"] }}
                 >
-                  <Timer size={16} weight="fill" color="white" />
+                  <Timer size={16} weight="fill" color={theme.white} />
                 </span>
-                <span className="iconLabel">Entrega rápida e rastreada</span>
+                <span className="icon-label">Entrega rápida e rastreada</span>
               </span>
             </section>
-            <section className="bottomLabels">
+            <section className="bottom-labels">
               <span>
                 <span
-                  className="labelIconContainer"
-                  style={{ background: "#574F4D" }}
+                  className="label-icon-container"
+                  style={{ background: theme["gray-700"] }}
                 >
-                  <Package size={16} weight="fill" color="white" />
+                  <Package size={16} weight="fill" color={theme.white} />
                 </span>
-                <span className="iconLabel">
+                <span className="icon-label">
                   Embalagem mantém o café intacto
                 </span>
               </span>
               <span>
                 <span
-                  className="labelIconContainer"
-                  style={{ background: "#8047F8" }}
+                  className="label-icon-container"
+                  style={{ background: theme["purple-500"] }}
                 >
-                  <Coffee size={16} weight="fill" color="white" />
+                  <Coffee size={16} weight="fill" color={theme.white} />
                 </span>
-                <span className="iconLabel">
+                <span className="icon-label">
                   O café chega fresquinho até você
                 </span>
               </span>
             </section>
           </section>
         </div>
-        <div className="coffeeImage">
+        <div className="coffee-image">
           <img src={coffeeHome} />
         </div>
       </section>

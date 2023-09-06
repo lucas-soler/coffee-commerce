@@ -22,7 +22,7 @@ justify-content: space-between;
 @media only screen and (max-width: 1025px) {
   padding: 2rem 2rem;
 
-  .coffeeImage{
+  .coffee-image{
     display: none;
   }
 
@@ -50,14 +50,14 @@ justify-content: space-between;
   flex: 1;
 }
 
-.mainTitle{
+.main-title{
   font-family: 'Baloo 2', cursive;
   line-height: 130%;
   font-size: 3rem;
   font-weight: 800;
 }
 
-.mainText {
+.main-text {
   font-family: 'Roboto', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
@@ -95,11 +95,11 @@ section {
   justify-content: flex-start;
 }
 
-.bottomLabels{
+.bottom-labels{
   align-items: flex-start;
 }
 
-.iconLabel {
+.icon-label {
   flex: 1;  
   align-items: flex-start;
   font-family: 'Roboto', sans-serif;
@@ -108,7 +108,7 @@ section {
   color: #574f4d;
 }
 
-.labelIconContainer{
+.label-icon-container{
 
   width: 2rem;
   height: 2rem;
@@ -116,7 +116,7 @@ section {
   border-radius: 16px;
 }
 
-.banner > coffeeImage > img{
+.banner > coffee-image > img{
 
   width: 30rem;
   height: 22.5rem;

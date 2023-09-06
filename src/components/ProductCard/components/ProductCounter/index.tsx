@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Minus, Plus, ShoppingCartSimple, Trash } from "phosphor-react";
 
 import { memo, useContext } from "react";
@@ -6,12 +7,13 @@ import { ProductsContext } from "../../../../contexts/ProductsContext";
 import { ProductCounterContainer } from "./styles";
 
 export enum ProductCounterType {
-  ADD = "ADD",
-  REMOVE = "REMOVE",
+  GENERAL = "GENERAL",
+  CART = "CART",
 }
 
 interface ProductCounterProps {
   productID: number;
+  amount: number;
   counterType: ProductCounterType;
 }
 
@@ -21,24 +23,17 @@ enum OperationType {
 }
 
 export const ProductCounter = memo(
-  ({ productID, counterType }: ProductCounterProps) => {
-    const { productAmounts, changeAmount } = useContext(ProductsContext);
+  ({ productID, amount, counterType }: ProductCounterProps) => {
+    const changeAmount =
+      counterType === ProductCounterType.GENERAL
+        ? useContext(ProductsContext).changeAmount
+        : useContext(CartContext).changeCartProductAmount;
 
     const {
       cartProductAmounts,
       addCartProductAmount,
       changeCartProductAmount,
     } = useContext(CartContext);
-
-    let amount = 0;
-
-    if (productAmounts.length > 0) {
-      const productAmount = productAmounts.find(
-        (product) => product.productID === productID
-      );
-
-      amount = productAmount ? productAmount.amount : 0;
-    }
 
     function operateOnProductAmounts(operationType: OperationType) {
       const newAmount =
@@ -76,9 +71,14 @@ export const ProductCounter = memo(
     }
 
     return (
-      <ProductCounterContainer>
+      <ProductCounterContainer
+        style={{
+          height:
+            counterType === ProductCounterType.GENERAL ? "2.375rem" : "2rem",
+        }}
+      >
         <span className="amount">
-          <button onClick={handleMinus} className="minus">
+          <button onClick={handleMinus} className="minus-plus">
             <Minus size={14} />
           </button>
           <input
@@ -92,12 +92,12 @@ export const ProductCounter = memo(
             type="number"
             readOnly={true}
           />
-          <button onClick={handlePlus} className="plus">
+          <button onClick={handlePlus} className="minus-plus">
             <Plus size={14} />
           </button>
         </span>
 
-        {counterType === ProductCounterType.ADD ? (
+        {counterType === ProductCounterType.GENERAL ? (
           <button
             className="shopping-cart-button"
             onClick={handleAddCart}
@@ -112,7 +112,7 @@ export const ProductCounter = memo(
             onClick={handleDeleteCart}
           >
             <Trash size={16} color="#8047F8" />
-            Remover
+            REMOVER
           </button>
         )}
       </ProductCounterContainer>

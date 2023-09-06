@@ -8,7 +8,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 padding: 0.5rem 0.25rem;
-background: #F3F2F2;
+background: ${(props) => props.theme["gray-200"]};
 
 div {
   display: flex;
@@ -24,14 +24,15 @@ img {
 
 header {
   text-transform: capitalize;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Roboto', cursive;
   font-size: 1rem;
   font-weight: 400;
-  color: #403937;
+  color: ${(props) => props.theme["gray-800"]};
 }
 
 section {
   display: flex;
+  gap: .5rem;
   flex-direction: column;
 }
 
@@ -43,7 +44,7 @@ section {
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
-  color: #574F4D;
+  color: ${(props) => props.theme["gray-700"]};
 }
 
 `;

@@ -8,10 +8,10 @@ gap: 0.5rem;
 .amount {
   width: 4.5rem;
   display: flex;
-  background: #ebe5f9;
+  background:  ${(props) => props.theme["gray-400"]};
   border-radius: 6px;
   justify-content: center;
-
+  align-items: center;
 }
 
 .amount > input[type="number"] {
@@ -20,7 +20,6 @@ gap: 0.5rem;
   appearance: textfield;
   width: 2.2rem;
   border-radius: 6px;
-
 }
 
 .amount > input[type=number]::-webkit-inner-spin-button,
@@ -41,14 +40,11 @@ gap: 0.5rem;
 .amount > input[type=number] {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: #272221;  
+  color: ${(props) => props.theme["gray-900"]};  
   font-size: 1rem;
-  padding: .5rem;
-  font-weight: bold;
   text-align: center;
-  background: #ebe5f9;
+  background: ${(props) => props.theme["gray-400"]};
 }
-
 
 .shopping-cart-button{
   width: 2.37rem;
@@ -62,14 +58,10 @@ gap: 0.5rem;
   background: ${(props) => props.theme["purple-500"]};
 }
 
-.shopping-cart-button:disabled{
-  cursor: pointer;
-  background: ${(props) => props.theme["purple-700"]};
-}
-
 .shopping-cart-remove-button{
   display: flex;
   height: 2rem;
+  font-size: 0.7rem;
   justify-content: center;
   align-items: center;
   padding: 0 0.5rem;
@@ -78,11 +70,17 @@ gap: 0.5rem;
   background: ${(props) => props.theme["gray-400"]};
 }
 
-.shopping-cart-button:hover{
+.shopping-cart-remove-button:hover{
   cursor: pointer;
-  background: ${(props) => props.theme["gray-800"]};
+  background: ${(props) => props.theme["gray-500"]};
 }
 
+.minus-plus {
+  color:  ${(props) => props.theme["purple-500"]};
+}
 
+.minus-plus:hover {
+  color:  ${(props) => props.theme["purple-700"]};
+}
 
 `;

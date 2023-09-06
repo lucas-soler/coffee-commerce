@@ -1,10 +1,10 @@
+import { memo } from "react";
 import { ProductLabelContainer } from "./styles";
 
 interface ProductLabelProps {
   children: React.ReactNode;
 }
 
-export function ProductLabel({children} : ProductLabelProps){
-  return <ProductLabelContainer>{children}</ProductLabelContainer>
-}
-
+export const ProductLabel = memo(({ children }: ProductLabelProps) => {
+  return <ProductLabelContainer>{children}</ProductLabelContainer>;
+});

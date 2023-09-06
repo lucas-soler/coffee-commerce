@@ -3,7 +3,7 @@ import styles from "styled-components";
 export const ProductCardContainer = styles.span`
   
 li{
-  background: ${(props) => props.theme["gray-400"]};
+  background: ${(props) => props.theme["gray-200"]};
   padding: 0 1.25rem 0 1.25rem;
   display: flex;
   flex-direction: column;

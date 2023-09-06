@@ -7,18 +7,19 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
-.headerLocaleAndCart {
+.header-locale-and-cart {
   display: flex;
   gap: 0.5rem;
 }
 
-.headerLocale{
+.header-locale{
   display: flex;
   align-items: center;
   padding: 0.5rem;
   border-radius: 6px;
   background: #EBE5F9;
   gap: 0.25rem;
+  height: 2.375rem;
 }
 
 .locale{
@@ -30,7 +31,7 @@ justify-content: space-between;
   color: #4B2995;
 }
 
-.headerCart {
+.header-cart {
   padding: 0.5rem;
   background: #F1E9C9;
   height: 2.375rem;
@@ -45,7 +46,7 @@ justify-content: space-between;
   height: 2.5rem;
 }
 
-.cartTotalAmount {
+.cart-total-amount {
   margin-top: -1.125rem;
   margin-right: -2.25rem;
   flex-shrink: 0;
@@ -59,11 +60,11 @@ justify-content: space-between;
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 16px;
-  background: #c47f17;
+  background: ${(props) => props.theme["yellow-700"]};
   letter-spacing: -0.72px;
 }
 
-.cartIcon{
+.cart-icon{
   margin-top: -0.125rem;
 }
 

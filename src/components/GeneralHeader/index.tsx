@@ -1,6 +1,7 @@
 import { MapPin, ShoppingCartSimple } from "phosphor-react";
 import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "styled-components";
 import { CartContext } from "../../contexts/CartContext";
 import { GeneralHeaderContainer } from "./styles";
 import logo from "/src/assets/logo.svg";
@@ -8,21 +9,23 @@ import logo from "/src/assets/logo.svg";
 export const GeneralHeader = memo(() => {
   const { cartProductAmounts } = useContext(CartContext);
 
+  const theme = useContext(ThemeContext);
+
   return (
     <GeneralHeaderContainer>
       <Link to="/">
         <img src={logo} />
       </Link>
-      <div className="headerLocaleAndCart">
-        <span className="headerLocale">
+      <div className="header-locale-and-cart">
+        <span className="header-locale">
           <span>
-            <MapPin size={22} weight="fill" color="#8047F8" />
+            <MapPin size={22} weight="fill" color={theme["purple-500"]} />
           </span>
           <span className="locale">Porto Alegre, RS</span>
         </span>
         <Link to="/checkout">
-          <span className="headerCart">
-            <span className="cartTotalAmount">
+          <span className="header-cart">
+            <span className="cart-total-amount">
               {cartProductAmounts.reduce(
                 (total, productAmount) => total + productAmount.amount,
                 0
@@ -30,10 +33,10 @@ export const GeneralHeader = memo(() => {
             </span>
             <span>
               <ShoppingCartSimple
-                className="cartIcon"
+                className="cart-icon"
                 size={22}
                 weight="fill"
-                color="#C47F17"
+                color={theme["yellow-700"]}
               />
             </span>
           </span>

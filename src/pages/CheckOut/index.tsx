@@ -18,7 +18,13 @@ export function CheckOut() {
           <h1>Cafés selecionados</h1>
           <section className="productsList">
             {cartProductAmounts.map((cartProduct) => {
-              return <CartProduct productID={cartProduct.productID} />;
+              return (
+                <CartProduct
+                  key={`cart-product-${cartProduct.productID}`}
+                  productID={cartProduct.productID}
+                  amount={cartProduct.amount}
+                />
+              );
             })}
           </section>
         </div>

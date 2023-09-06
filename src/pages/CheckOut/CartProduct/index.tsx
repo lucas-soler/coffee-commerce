@@ -8,9 +8,10 @@ import { CartProductContainer } from "./styles";
 
 interface CartProductProps {
   productID: number;
+  amount: number;
 }
 
-export function CartProduct({ productID }: CartProductProps) {
+export function CartProduct({ productID, amount }: CartProductProps) {
   const { products } = useContext(ProductsContext);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -25,7 +26,8 @@ export function CartProduct({ productID }: CartProductProps) {
           <footer>
             <ProductCounter
               productID={productID}
-              counterType={ProductCounterType.REMOVE}
+              amount={amount}
+              counterType={ProductCounterType.CART}
             ></ProductCounter>
           </footer>
         </section>

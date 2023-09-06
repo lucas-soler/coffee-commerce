@@ -23,10 +23,14 @@ interface ProductCardProps {
 }
 
 export const ProductCard = memo(({ productID }: ProductCardProps) => {
-  const { products } = useContext(ProductsContext);
+  const { products, productAmounts } = useContext(ProductsContext);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const product = products.find((product) => product.id === productID)!;
+
+  const productAmount = productAmounts.find(
+    (product) => product.productID === productID
+  )?.amount;
 
   return (
     <ProductCardContainer>
@@ -53,7 +57,8 @@ export const ProductCard = memo(({ productID }: ProductCardProps) => {
           </span>
           <ProductCounter
             productID={product.id}
-            counterType={ProductCounterType.ADD}
+            amount={productAmount || 0}
+            counterType={ProductCounterType.GENERAL}
           ></ProductCounter>
         </footer>
       </li>
