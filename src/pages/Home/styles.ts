@@ -5,7 +5,6 @@ export const HomeContainer = styled.main`
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  max-width: 70rem;
 
   h1 {
     font-family: "Baloo 2", cursive;

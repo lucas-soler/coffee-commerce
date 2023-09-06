@@ -12,7 +12,6 @@ export const HeaderHomeContainer = styled.header`
     flex: 1;
     justify-content: space-between;
     flex-direction: row;
-    border: 1px solid red;
     gap: 3.5rem;
   }
 

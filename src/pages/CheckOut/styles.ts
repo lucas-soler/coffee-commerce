@@ -17,7 +17,6 @@ export const CheckOutContainer = styled.main`
   }
 
   .register-form {
-    border: 1px solid red;
     width: 60vw;
     align-self: start;
   }

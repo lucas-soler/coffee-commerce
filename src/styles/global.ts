@@ -15,6 +15,10 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     background: ${(props) => props.theme["gray-100"]};
     -webkit-font-smoothing: antialiased;
@@ -30,7 +34,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     padding: 2.5rem 10rem;
     max-width: 90rem;
-    border: 1px solid red;
 
     @media only screen and (max-width: 1025px) {
       padding: 2rem 2rem;
