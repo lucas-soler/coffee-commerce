@@ -6,8 +6,7 @@ export const CheckOutContainer = styled.main`
   align-items: stretch;
   justify-content: space-between;
   gap: 2rem;
-
-  border: 1px solid green;
+  padding: 2.5rem 0;
 
   h1 {
     font-family: "Baloo 2", cursive;
@@ -16,16 +15,19 @@ export const CheckOutContainer = styled.main`
     color: ${(props) => props.theme["gray-800"]};
   }
 
+  > div {
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: column;
+  }
+
   .register-form {
     width: 60vw;
-    align-self: start;
+    align-self: flex-start;
   }
 
   .check-out-cart {
     width: 40vw;
-    display: flex;
-    gap: 1.25rem;
-    flex-direction: column;
   }
 
   .products-list {
@@ -71,7 +73,13 @@ export const CheckOutContainer = styled.main`
       }
     }
 
-    > button {
+    a {
+      display: flex;
+      cursor: pointer;
+    }
+
+    a > button {
+      flex: 1;
       color: ${(props) => props.theme.white};
       text-transform: uppercase;
       padding: 0.75rem 0.5rem;
@@ -85,6 +93,23 @@ export const CheckOutContainer = styled.main`
         cursor: pointer;
         background-color: ${(props) => props.theme["yellow-700"]};
       }
+    }
+  }
+
+  @media only screen and (max-width: 1025px) {
+    flex-direction: column;
+    align-items: flex-sart;
+
+    .products-list {
+      padding: 1rem;
+    }
+
+    .register-form {
+      width: 100%;
+    }
+
+    .check-out-cart {
+      width: 100%;
     }
   }
 `;

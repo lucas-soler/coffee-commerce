@@ -10,6 +10,7 @@ export const CartProductContainer = styled.div`
   background: ${(props) => props.theme["gray-200"]};
 
   div {
+    flex: 1;
     display: flex;
     flex-direction: row;
     gap: 1.25rem;
@@ -29,6 +30,7 @@ export const CartProductContainer = styled.div`
   }
 
   section {
+    flex: 1;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
@@ -36,12 +38,33 @@ export const CartProductContainer = styled.div`
 
   .price {
     align-self: stretch;
-    justify-content: center;
     font-size: 1rem;
     font-family: Roboto;
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
     color: ${(props) => props.theme["gray-700"]};
+  }
+
+  .price::before {
+    content: "R$ ";
+  }
+
+  @media only screen and (max-width: 1025px) {
+    section {
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) and (max-width: 1365px) {
+    .price::before {
+      content: "";
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .price::before {
+      content: "";
+    }
   }
 `;

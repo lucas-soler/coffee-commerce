@@ -1,7 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
-import { CartProduct } from "./CartProduct";
-import { CheckOutHeader } from "./Header";
+import { CartProduct } from "./components/CartProduct";
+import { Form } from "./components/Form";
+import { CheckOutHeader } from "./components/Header";
+import { Payment } from "./components/Payments";
 import { CheckOutContainer } from "./styles";
 
 export function CheckOut() {
@@ -24,6 +27,8 @@ export function CheckOut() {
       <CheckOutContainer>
         <div className="register-form">
           <h1>Complete seu pedido</h1>
+          <Form />
+          <Payment />
         </div>
         <div className="check-out-cart">
           <h1>Cafés selecionados</h1>
@@ -63,7 +68,6 @@ export function CheckOut() {
               <footer>
                 <span>Total</span>
                 <span>
-                  {" "}
                   {totalPrice.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
@@ -71,13 +75,10 @@ export function CheckOut() {
                 </span>
               </footer>
             </section>
-
-            <button>Confirmar pedido</button>
+            <Link to="/success">
+              <button>Confirmar pedido</button>
+            </Link>
           </section>
-          teste
-          <br />
-          <br />
-          <br />
         </div>
       </CheckOutContainer>
     </>

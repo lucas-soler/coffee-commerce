@@ -2,8 +2,8 @@ import { useContext } from "react";
 import {
   ProductCounter,
   ProductCounterType,
-} from "../../../components/ProductCard/components/ProductCounter";
-import { ProductsContext } from "../../../contexts/ProductsContext";
+} from "../../../../components/ProductCard/components/ProductCounter";
+import { ProductsContext } from "../../../../contexts/ProductsContext";
 import { CartProductContainer } from "./styles";
 
 interface CartProductProps {
@@ -35,7 +35,6 @@ export function CartProduct({ productID, amount, price }: CartProductProps) {
         </section>
       </div>
       <span className="price">
-        R${" "}
         {product.price.toLocaleString("pt-BR", {
           minimumFractionDigits: 2,
         })}
