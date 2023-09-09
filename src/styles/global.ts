@@ -17,13 +17,15 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     overflow-y: scroll;
+    height: 100%;
   }
 
   body {
     -webkit-font-smoothing: antialiased;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
+    height: 100%;
   }
 
   #root{
@@ -31,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    min-height: 100%;
     padding: 2.5rem 10rem;
     max-width: 90rem;
     background-color: ${(props) => props.theme["gray-100"]};

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { CartProduct } from "./components/CartProduct";
 import { Form } from "./components/Form";
@@ -75,9 +74,9 @@ export function CheckOut() {
                 </span>
               </footer>
             </section>
-            <Link to="/success">
-              <button>Confirmar pedido</button>
-            </Link>
+            <button type="submit" form="address-form" id="order-button">
+              Confirmar pedido
+            </button>
           </section>
         </div>
       </CheckOutContainer>

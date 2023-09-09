@@ -77,6 +77,11 @@ export const FormContainer = styled.div`
         }
       }
     }
+
+    .error-message {
+      font-size: 0.77rem;
+      color: ${(props) => props.theme.red};
+    }
   }
 
   @media only screen and (min-width: 1025px) {

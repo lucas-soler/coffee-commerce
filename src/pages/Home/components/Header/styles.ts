@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HeaderHomeContainer = styled.section`
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

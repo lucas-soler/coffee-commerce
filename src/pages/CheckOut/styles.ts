@@ -72,26 +72,33 @@ export const CheckOutContainer = styled.main`
         font-weight: 700;
       }
     }
+  }
 
-    a {
-      display: flex;
+  #order-button {
+    display: flex;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+    color: ${(props) => props.theme.white};
+    text-transform: uppercase;
+    padding: 0.75rem 0.5rem;
+    background-color: ${(props) => props.theme["yellow-500"]};
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 160%;
+
+    :hover {
       cursor: pointer;
+      background-color: ${(props) => props.theme["yellow-700"]};
     }
 
-    a > button {
-      flex: 1;
-      color: ${(props) => props.theme.white};
-      text-transform: uppercase;
-      padding: 0.75rem 0.5rem;
-      background-color: ${(props) => props.theme["yellow-500"]};
-      border-radius: 6px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      line-height: 160%;
+    :disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
 
       :hover {
-        cursor: pointer;
-        background-color: ${(props) => props.theme["yellow-700"]};
+        background-color: ${(props) => props.theme["yellow-500"]};
       }
     }
   }
