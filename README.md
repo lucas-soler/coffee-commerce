@@ -51,7 +51,7 @@ I have developed this small e-commerce website to practice my skills in ReactJS,
 
 ## **🔖 Layout**
 
-You can access and copy the project layout on the following link: (<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). You have to have a Figma account to copy the design. [Figma](http://figma.com/).
+You can access and copy the project layout on the following link: (<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate>). You have to have a Figma account to copy the design. [Figma](http://figma.com/).
 
 ---
 
