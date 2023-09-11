@@ -16,25 +16,25 @@
 
 <p align="center">
   <strong>
-      <a href="#-Preview">Preview</a> &nbsp;|&nbsp; 
+      <a href="#-preview">Preview</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-projeto">Projeto</a> &nbsp;|&nbsp; 
+      <a href="#-project">About</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
       <a href="#-layout">Layout</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-tecnologias">Tecnologias</a> &nbsp;|&nbsp; 
+      <a href="#-technologies">Tech stack</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-como-executar-o-projeto">Executando</a> &nbsp;|&nbsp; 
+      <a href="#-how-to-run">Running</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-referências">Referências</a> &nbsp;|&nbsp; 
+      <a href="#-references">References</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-autor">Autor</a> 
+      <a href="#-author">Author</a> 
   </strong>
 </p>
 
@@ -43,7 +43,7 @@
 </p>
 </div>
 
-## **💻 Projeto**
+## **💻 About**
 
 I have developed this small e-commerce website to practice my skills in ReactJS, TypeScript, Styled Components, and so on. This is part of a specialization in the React world I have been pursuing on my free time.
 
@@ -51,19 +51,11 @@ I have developed this small e-commerce website to practice my skills in ReactJS,
 
 ## **🔖 Layout**
 
-Você pode visualizar o layout do projeto no formato através [desse link](<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
-
-#### **Web**
-
-<p align="center">
-  <img  src=".github/screen01.png" width="100%">
-  <img  src=".github/screen02.png" width="100%">
-  <img  src=".github/screen03.png" width="100%">
-</p>
+You can access and copy the project layout on the following link: [desse link](<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). You have to have a Figma account to copy the design. [Figma](http://figma.com/).
 
 ---
 
-## **💻 Tecnologias**
+## **💻 Tech stack**
 
 #### **Website** ([React][react])
 
@@ -75,7 +67,7 @@ Você pode visualizar o layout do projeto no formato através [desse link](<http
 - **[JSON Sserver][json_server]**
 - **[Node v18.16.1][node]**
 
-> \* Veja o arquivo <kbd>[package.json](./package.json)</kbd>
+> \* See the file <kbd>[package.json](./package.json)</kbd>
 
 #### **Utilitários**
 
@@ -88,13 +80,12 @@ Você pode visualizar o layout do projeto no formato através [desse link](<http
 
 ### Configurações Iniciais
 
-Primeiro, você precisa ter o <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> instalado na sua máquina.
+First, you have to have <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> installed on your computer.
 
-Se você estiver utilizando o **Linux**, você pode optar por instalar o **Node** através do gerênciador de versões <kbd>[nvm]</kbd> para caso seja nescessario alterar a sua versão do **Node** para uma versão mais antiga ou mais nova.
+I use a MacBook. So, I installed NodeJS through HomeBrew. I do recommend it to manage all your
+dependencies on the operational system.
 
-Você pode optar também por utilizar o **yarn** no lugar do **npm**. Você pode instalar clicando nesse <kbd>[link][yarn]</kbd>.
-
-Após ter o **Node** instalado, instale as dependências do **React** contidas nos arquivos `package.json` que se encontram na raíz do repositório. Para instalar as dependências, basta abrir o terminal no diretório e digitar o comando:
+After you install **Node**, please install all **React** dependencies described on `package.json` file which you can find on this repository root. Then, open your prefered terminal and type the following command to install all dependencies:
 
 ```sh
 $ npm install
@@ -104,39 +95,21 @@ $ npm install
 $ yarn
 ```
 
-> Veja a parte de **scripts {}** do arquivo <kbd>[package.json](./package.json)</kbd> para saber quais scripts estão disponíveis.
-
-### Executando JSON Server
+### Running the site
 
 ```sh
-# Executando o JSON Server:
-$ npm run server
-
-# ou
-
-# Executando o JSON Server:
-$ yarn server
-```
-
----
-
-### Executando o WebSite
-
-```sh
-# Executando o website em outra aba de terminal:
 $ npm run dev
 
 # ou
 
-# Executando o website em outra aba de terminal:
 $ yarn dev
 ```
 
-> Se o browser não abrir automaticamente, acesse: http://localhost:5173.
+> If the browser does not open automatically, acesse: http://localhost:5173.
 
 ---
 
-## **👨‍🚀 Autor**
+## **👨‍🚀 Author**
 
 <a href="https://github.com/lucas-soler">
  <img style="border-radius: 50%;" src="https://github.com/lucas-soler.png" width="100px;" alt="Lucas Soler"/>
@@ -144,14 +117,14 @@ $ yarn dev
  <sub><b>Lucas Soler</b></sub></a>
  <br />
 
-👋 Entre em contato!
+👋 Get in touch!
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jairodoni/)](https://www.linkedin.com/in/jairodoni/)
-[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:jairo.doni97@gmail.com)](mailto:jairo.doni97@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-p-soler/)](https://www.linkedin.com/in/lucas-p-soler/)
+[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:lucas.p.soler@gmail.com)](mailto:lucas.p.soler@gmail.com)
 
-## **:memo: Licença**
+## **:memo: License**
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+This project is under MIT license.
 
 <!-- Website Links -->
 
