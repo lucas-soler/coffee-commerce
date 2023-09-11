@@ -39,7 +39,7 @@
 </p>
 
 <p align="center">
-  <img alt="moveit" src=".github/coffee-commerce.png" width="100%">
+  <img alt="moveit" src="coffee-commerce.png" width="100%">
 </p>
 </div>
 
