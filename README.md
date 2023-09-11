@@ -39,25 +39,19 @@
 </p>
 
 <p align="center">
-  <img alt="moveit" src=".github/coffee-delivery.png" width="100%">
+  <img alt="moveit" src=".github/coffee-commerce.png" width="100%">
 </p>
 </div>
 
-## **✨ Preview**
-
-#### Sistema Online: https://coffee-delivery-ecomerce.vercel.app
-
----
-
 ## **💻 Projeto**
 
-Um projeto desenvolvido durante o <b>Bootcamp Ignite</b> da <b>Rocketseat</b>, o projeto "Coffee Delivery" é um projeto que simula um e-commerce de venda de cafés por entrega.
+I have developed this small e-commerce website to practice my skills in ReactJS, TypeScript, Styled Components, and so on. This is part of a specialization in the React world I have been pursuing on my free time.
 
 ---
 
 ## **🔖 Layout**
 
-Você pode visualizar o layout do projeto no formato através [desse link](<https://www.figma.com/file/cXnQ94HEjpoxl55ZtjKRiy/Coffee-Delivery-(JD)?type=design&node-id=2%3A12&mode=design&t=FEeKvDZIRfmBSa9U-1>). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
+Você pode visualizar o layout do projeto no formato através [desse link](<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
 
 #### **Web**
 
