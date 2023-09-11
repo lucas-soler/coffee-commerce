@@ -19,7 +19,7 @@
       <a href="#-preview">Preview</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-project">About</a> &nbsp;|&nbsp; 
+      <a href="#-about">About</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
       <a href="#-layout">Layout</a> &nbsp;|&nbsp; 
@@ -51,7 +51,7 @@ I have developed this small e-commerce website to practice my skills in ReactJS,
 
 ## **🔖 Layout**
 
-You can access and copy the project layout on the following link: [desse link](<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). You have to have a Figma account to copy the design. [Figma](http://figma.com/).
+You can access and copy the project layout on the following link: (<https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate). You have to have a Figma account to copy the design. [Figma](http://figma.com/).
 
 ---
 
@@ -69,21 +69,20 @@ You can access and copy the project layout on the following link: [desse link](<
 
 > \* See the file <kbd>[package.json](./package.json)</kbd>
 
-#### **Utilitários**
+#### **IDE**
 
 - Editor: **[Visual Studio Code][vscode]**
-- Markdown: **[StackEdit][stackedit]**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
 
 ---
 
-## **🚀 Como executar o projeto**
+## **🚀 How to run the project**
 
-### Configurações Iniciais
+### Initial settings
 
 First, you have to have <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> installed on your computer.
 
-I use a MacBook. So, I installed NodeJS through HomeBrew. I do recommend it to manage all your
-dependencies on the operational system.
+I use a MacBook. So, I installed NodeJS through HomeBrew. I do recommend it to manage all the
+packages on your operational system.
 
 After you install **Node**, please install all **React** dependencies described on `package.json` file which you can find on this repository root. Then, open your prefered terminal and type the following command to install all dependencies:
 
