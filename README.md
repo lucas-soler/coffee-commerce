@@ -25,13 +25,10 @@
       <a href="#-layout">Layout</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-technologies">Tech stack</a> &nbsp;|&nbsp; 
+      <a href="#-technologies">Technologies</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-how-to-run">Running</a> &nbsp;|&nbsp; 
-  </strong>
-  <strong>
-      <a href="#-references">References</a> &nbsp;|&nbsp; 
+      <a href="#-running">Running</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
       <a href="#-author">Author</a> 
@@ -55,7 +52,7 @@ You can access and copy the project layout on the following link: (<https://www.
 
 ---
 
-## **💻 Tech stack**
+## **💻 Technologies**
 
 #### **Website** ([React][react])
 
@@ -75,7 +72,7 @@ You can access and copy the project layout on the following link: (<https://www.
 
 ---
 
-## **🚀 How to run the project**
+## **🚀 Running**
 
 ### Initial settings
 
@@ -104,7 +101,7 @@ $ npm run dev
 $ yarn dev
 ```
 
-> If the browser does not open automatically, acesse: http://localhost:5173.
+> If the browser does not open automatically, acess: http://localhost:5173.
 
 ---
 
