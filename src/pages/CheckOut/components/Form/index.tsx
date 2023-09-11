@@ -1,6 +1,6 @@
 import { MapPinLine } from "phosphor-react";
 import { useContext } from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { ThemeContext } from "styled-components";
 import { FormContainer } from "./styles";
 
@@ -19,19 +19,49 @@ const addressFormValidationSchema = zod.object({
       required_error: "Informar o logradouro é obrigatório",
     })
     .min(3, "O logradouro precisa ter no mínimo 3 caracteres")
-    .max(30, "O logradouro precisa ter no máximo 30 dígitos"),
+    .max(50, "O logradouro precisa ter no máximo 50 dígitos"),
+  numero: zod
+    .string({
+      required_error: "Informar o número é obrigatório",
+    })
+    .min(1, "O número precisa ter no mínimo 1 caractere")
+    .max(5, "O número precisa ter no máximo 5 dígitos"),
+  complemento: zod
+    .string()
+    .min(0)
+    .max(20, "O complemento pode ter no máximo 20 caracteres"),
+  bairro: zod
+    .string({
+      required_error: "Informar o bairro é obrigatório",
+    })
+    .min(1, "O bairro precisa ter no mínimo 1 caractere")
+    .max(25, "O bairro precisa ter no máximo 25 dígitos"),
+  cidade: zod
+    .string({
+      required_error: "Informar a cidade é obrigatório",
+    })
+    .min(3, "A cidade precisa ter no mínimo 3 caractere")
+    .max(30, "A cidade precisa ter no máximo 30 caracteres"),
+  uf: zod
+    .string({
+      required_error: "Informar o UF é obrigatório",
+    })
+    .min(2, "A UF precisa ter no mínimo 2 caracteres")
+    .max(2, "A UF precisa ter no máximo 2 caracteres"),
 });
 
-export function Form() {
+export type AddressSchemaType = zod.infer<typeof addressFormValidationSchema>;
+
+interface FormProps {
+  onSubmit: (data: FieldValues) => void;
+}
+
+export function Form({ onSubmit }: FormProps) {
   const theme = useContext(ThemeContext);
 
   const { register, handleSubmit, formState } = useForm({
     resolver: zodResolver(addressFormValidationSchema),
   });
-
-  function handleInformAddress(data: any) {
-    console.log(data);
-  }
 
   return (
     <FormContainer>
@@ -43,12 +73,12 @@ export function Form() {
         </section>
       </header>
       <section>
-        <form onSubmit={handleSubmit(handleInformAddress)} id="address-form">
+        <form onSubmit={handleSubmit(onSubmit)} id="address-form">
           <div className="small-field">
             <input
               type="number"
               placeholder="CEP"
-              {...register("cep")}
+              {...register("cep", { maxLength: 8 })}
               maxLength={8}
             />
           </div>
@@ -56,7 +86,12 @@ export function Form() {
             formState.errors.cep?.message ? formState.errors.cep.message : ""
           }`}</span>
           <div>
-            <input type="text" placeholder="Rua" {...register("rua")} />
+            <input
+              type="text"
+              placeholder="Rua"
+              {...register("rua")}
+              maxLength={50}
+            />
           </div>
           <span className="error-message">{`${
             formState.errors.rua?.message ? formState.errors.rua.message : ""
@@ -64,7 +99,12 @@ export function Form() {
 
           <section>
             <div className="small-field">
-              <input type="text" placeholder="Número" {...register("numero")} />
+              <input
+                type="text"
+                placeholder="Número"
+                {...register("numero")}
+                maxLength={5}
+              />
             </div>
             <span className="error-message">{`${
               formState.errors.numero?.message
@@ -76,6 +116,7 @@ export function Form() {
                 type="text"
                 placeholder="Complemento"
                 {...register("complemento")}
+                maxLength={20}
               />
               <span>Opcional</span>
             </div>
@@ -83,11 +124,16 @@ export function Form() {
               formState.errors.complemento?.message
                 ? formState.errors.complemento.message
                 : ""
-            }`}</span>{" "}
+            }`}</span>
           </section>
           <section>
             <div className="small-field">
-              <input type="text" placeholder="Bairro" {...register("bairro")} />
+              <input
+                type="text"
+                placeholder="Bairro"
+                {...register("bairro")}
+                maxLength={25}
+              />
             </div>
             <span className="error-message">{`${
               formState.errors.bairro?.message
@@ -95,7 +141,12 @@ export function Form() {
                 : ""
             }`}</span>
             <div className="long-field">
-              <input type="text" placeholder="Cidade" {...register("cidade")} />
+              <input
+                type="text"
+                placeholder="Cidade"
+                {...register("cidade")}
+                maxLength={30}
+              />
             </div>
             <span className="error-message">{`${
               formState.errors.cidade?.message
@@ -106,13 +157,14 @@ export function Form() {
               <input
                 type="text"
                 placeholder="UF"
-                size={4}
+                size={2}
                 {...register("uf")}
+                maxLength={2}
               />
             </div>
             <span className="error-message">{`${
               formState.errors.uf?.message ? formState.errors.uf.message : ""
-            }`}</span>{" "}
+            }`}</span>
           </section>
         </form>
       </section>

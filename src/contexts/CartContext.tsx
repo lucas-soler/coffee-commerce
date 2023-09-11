@@ -8,6 +8,7 @@ import {
 import {
   addProductAmountAction,
   changeProductAmountAction,
+  clearCartAction,
 } from "../reducers/cart-product-amount/actions";
 
 import { cartProductAmountReducer } from "../reducers/cart-product-amount/reducer";
@@ -21,6 +22,7 @@ export interface CartProductAmount extends ProductAmount {
 interface CartContextType {
   cartProductAmounts: CartProductAmount[];
   addCartProductAmount: (cartProductAmount: CartProductAmount) => void;
+  clearCart: () => void;
   changeCartProductAmount: (newCartProductAmount: CartProductAmount) => void;
 }
 
@@ -71,6 +73,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     changeAmount(resetAmount);
   }
 
+  function clearCart() {
+    dispatch(clearCartAction());
+  }
+
   useEffect(() => {
     localStorage.setItem(
       "@coffee-commerce:cart-amounts-1.0.0",
@@ -85,6 +91,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       value={{
         cartProductAmounts,
         addCartProductAmount,
+        clearCart,
         changeCartProductAmount,
       }}
     >

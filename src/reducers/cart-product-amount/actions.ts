@@ -7,6 +7,7 @@ interface CartProductAmountActionPayload {
 export enum CartProductAmountActionTypes {
   ADD_AMOUNT = "ADD_AMOUNT",
   CHANGE_AMOUNT = "CHANGE_AMOUNT",
+  CLEAR_CART = "CLEAR_CART",
 }
 
 export interface CartProductAmountsActionType {
@@ -28,6 +29,19 @@ export function changeProductAmountAction(newAmount: CartProductAmount) {
     type: CartProductAmountActionTypes.CHANGE_AMOUNT,
     payload: {
       cartProductAmount: newAmount,
+    },
+  };
+}
+
+export function clearCartAction() {
+  return {
+    type: CartProductAmountActionTypes.CLEAR_CART,
+    payload: {
+      cartProductAmount: {
+        productID: 0,
+        amount: 0,
+        price: 0,
+      },
     },
   };
 }

@@ -1,12 +1,37 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
+import { AddressSchemaType } from "../CheckOut/components/Form";
+import { PaymentType } from "../CheckOut/components/Payments";
 import { SuccessHeader } from "./Header";
 import { SuccessContainer } from "./styles";
 import delivery from "/src/assets/delivery.svg";
 
+interface OrderData extends AddressSchemaType {
+  payment_method: PaymentType;
+}
+
 export function Success() {
   const theme = useContext(ThemeContext);
+  const order: OrderData = JSON.parse(
+    `${sessionStorage.getItem("@coffee-commerce:checkout-data-1.0.0")}`
+  );
+
+  let paymentMethodLabel = "";
+
+  switch (order.payment_method) {
+    case PaymentType.CREDITCARD:
+      paymentMethodLabel = "Cartão de crédito";
+      break;
+    case PaymentType.DEBITCARD:
+      paymentMethodLabel = "Cartão de débito";
+      break;
+    case PaymentType.MONEY:
+      paymentMethodLabel = "Dinheiro";
+      break;
+    default:
+      break;
+  }
 
   return (
     <>
@@ -22,9 +47,14 @@ export function Success() {
               </span>
               <span className="icon-text">
                 <span>
-                  Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                  Entrega em{" "}
+                  <strong>
+                    {order.rua}, {order.numero}
+                  </strong>
                 </span>
-                <span>Farrapos - Porto Alegre, RS</span>
+                <span>
+                  {order.bairro} - {order.cidade},{order.uf}
+                </span>
               </span>
             </article>
             <article>
@@ -45,7 +75,7 @@ export function Success() {
               <span className="icon-text">
                 <span>Pagamento na entrega</span>
                 <span>
-                  <strong>Cartão de crédito</strong>
+                  <strong>{paymentMethodLabel}</strong>
                 </span>
               </span>
             </article>

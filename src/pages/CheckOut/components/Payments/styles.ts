@@ -33,6 +33,11 @@ export const PaymentContainer = styled.div`
     }
   }
 
+  > span {
+    font-size: 0.77rem;
+    color: ${(props) => props.theme.red};
+  }
+
   > section {
     display: flex;
     gap: 0.75rem;
@@ -57,11 +62,11 @@ export const PaymentContainer = styled.div`
         cursor: pointer;
         background: ${(props) => props.theme["gray-500"]};
       }
+    }
 
-      :focus {
-        background: ${(props) => props.theme["purple-100"]};
-        border: 1px solid ${(props) => props.theme["purple-500"]};
-      }
+    .selected {
+      background: ${(props) => props.theme["purple-100"]};
+      border: 1px solid ${(props) => props.theme["purple-500"]};
     }
   }
 

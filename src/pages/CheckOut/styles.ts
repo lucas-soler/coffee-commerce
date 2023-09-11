@@ -16,9 +16,16 @@ export const CheckOutContainer = styled.main`
   }
 
   > div {
+    font-family: "Roboto", sans-serif;
+
     display: flex;
     gap: 1.25rem;
     flex-direction: column;
+
+    > span {
+      font-size: 0.9rem;
+      color: ${(props) => props.theme.red};
+    }
   }
 
   .register-form {
@@ -48,7 +55,6 @@ export const CheckOutContainer = styled.main`
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      font-family: "Roboto", sans-serif;
 
       > article {
         display: flex;

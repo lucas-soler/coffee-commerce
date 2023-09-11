@@ -35,5 +35,7 @@ export function cartProductAmountReducer(
         }
       });
     }
+    case CartProductAmountActionTypes.CLEAR_CART:
+      return [];
   }
 }

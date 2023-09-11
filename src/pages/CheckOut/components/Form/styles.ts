@@ -65,6 +65,10 @@ export const FormContainer = styled.div`
         }
       }
 
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
       > section {
         gap: 1rem;
         display: flex;

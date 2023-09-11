@@ -1,13 +1,20 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { FieldValues } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { CartProduct } from "./components/CartProduct";
-import { Form } from "./components/Form";
+import { AddressSchemaType, Form } from "./components/Form";
 import { CheckOutHeader } from "./components/Header";
-import { Payment } from "./components/Payments";
+import { Payment, PaymentType } from "./components/Payments";
 import { CheckOutContainer } from "./styles";
 
 export function CheckOut() {
-  const { cartProductAmounts } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const { cartProductAmounts, clearCart } = useContext(CartContext);
+
+  const [paymentType, setPaymentType] = useState<PaymentType>();
+  const [addressData, setAddressData] = useState<AddressSchemaType>();
 
   const shippingPrice = 3.5;
 
@@ -20,17 +27,45 @@ export function CheckOut() {
 
   const totalPrice = totalValueItems + shippingPrice;
 
+  function onSubmit(data: FieldValues) {
+    const address = data as AddressSchemaType;
+
+    if (paymentType && cartProductAmounts.length > 0) {
+      sessionStorage.setItem(
+        "@coffee-commerce:checkout-data-1.0.0",
+        JSON.stringify({ ...address, payment_method: paymentType })
+      );
+
+      clearCart();
+
+      navigate("/success");
+    }
+
+    setAddressData(address);
+  }
+
   return (
     <>
       <CheckOutHeader />
       <CheckOutContainer>
         <div className="register-form">
           <h1>Complete seu pedido</h1>
-          <Form />
-          <Payment />
+          <Form onSubmit={onSubmit} />
+          <Payment
+            setPaymentType={setPaymentType}
+            selectedPaymentType={paymentType}
+            formIsDone={addressData ? true : false}
+          />
         </div>
         <div className="check-out-cart">
           <h1>Cafés selecionados</h1>
+          {cartProductAmounts.length === 0 ? (
+            <span>
+              Você deve escolher pelo menos um café para fechar o pedido
+            </span>
+          ) : (
+            ""
+          )}
           <section className="products-list">
             {cartProductAmounts.map((cartProduct) => {
               return (
@@ -74,7 +109,12 @@ export function CheckOut() {
                 </span>
               </footer>
             </section>
-            <button type="submit" form="address-form" id="order-button">
+            <button
+              type="submit"
+              form="address-form"
+              id="order-button"
+              disabled={cartProductAmounts.length === 0}
+            >
               Confirmar pedido
             </button>
           </section>
